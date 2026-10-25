@@ -11,6 +11,23 @@ Two [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) skills f
 
 ## Install / 安装
 
+### 一键安装（复制到 DeepSeek Harness）/ One-paste install
+
+把下面整段复制到 DSH 对话框发送即可：DSH 会自动下载、备份旧版本、安装到 `%USERPROFILE%\.dsh\skills` 并校验。
+
+```text
+安装 DSH 技能：请执行
+pwsh -NoProfile -Command "irm https://raw.githubusercontent.com/MrCypressBai/dsh-windows-cleanup-skills/main/install.ps1 | iex"
+完成后列出 %USERPROFILE%\.dsh\skills 下的 dsh-* 技能并汇报安装结果。
+```
+
+> `raw.githubusercontent.com` 访问不了时，把命令里的 URL 换成 jsDelivr：
+> `https://cdn.jsdelivr.net/gh/MrCypressBai/dsh-windows-cleanup-skills@main/install.ps1`
+>
+> `install.ps1` 参数：`-TargetDir`（默认 `%USERPROFILE%\.dsh\skills`）、`-Repo`、`-Ref`、`-NoBackup`、`-SkipVerify`。同名技能已存在时自动备份为 `<name>.bak-<时间戳>`，下载失败会回退备用地址。
+
+### 手动安装 / Manual install
+
 ```powershell
 git clone https://github.com/MrCypressBai/dsh-windows-cleanup-skills.git
 $dest = Join-Path $env:USERPROFILE '.dsh\skills'
@@ -50,6 +67,7 @@ DSH loads user skills from `%USERPROFILE%\.dsh\skills\<name>\SKILL.md` (and proj
 ## Layout
 
 ```
+install.ps1            # one-paste installer (download → backup → install → verify)
 dsh-app-inventory-audit/
   SKILL.md
   agents/openai.yaml
