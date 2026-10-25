@@ -12,7 +12,7 @@ Two [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) skills f
 ## Install / 安装
 
 ```powershell
-git clone https://github.com/<owner>/dsh-windows-cleanup-skills.git
+git clone https://github.com/MrCypressBai/dsh-windows-cleanup-skills.git
 $dest = Join-Path $env:USERPROFILE '.dsh\skills'
 New-Item -ItemType Directory -Force $dest | Out-Null
 Copy-Item .\dsh-windows-cleanup-skills\dsh-* $dest -Recurse -Force
