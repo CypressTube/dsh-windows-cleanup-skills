@@ -1,0 +1,4 @@
+interface:
+  display_name: "Windows App Inventory Audit"
+  short_description: "Inventory installed apps and find orphaned folders"
+  default_prompt: "Use $dsh-app-inventory-audit to inventory the software installed on this Windows machine across C: and D:, then list folders or app data left behind by software that no longer exists or is unused, with evidence and risk."

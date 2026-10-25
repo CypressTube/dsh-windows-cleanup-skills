@@ -1,0 +1,4 @@
+interface:
+  display_name: "Windows Orphan Folder Cleanup"
+  short_description: "Delete confirmed leftover folders safely"
+  default_prompt: "Use $dsh-orphan-folder-cleanup to delete the confirmed leftover folders from this plan, with allowlist validation, backup-before-delete, per-item logging, and post-delete verification."
